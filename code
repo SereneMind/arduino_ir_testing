@@ -1,0 +1,26 @@
+int SensorPin=2;
+int SensorValue=LOW;
+void setup()
+{
+pinMode(10,OUTPUT);
+pinMode(2,INPUT);
+Serial.begin(9600);
+int maxvalue=1000;
+}
+void loop()
+{
+  digitalWrite(10,HIGH);
+  delayMicroseconds(10);
+  digitalRead(SensorPin);
+  SensorValue = digitalRead(SensorPin);
+    if(SensorValue>0)
+      {
+        Serial.println(SensorValue);
+        Serial.println("white surface");
+      }
+      else
+      {
+      Serial.println("black line");
+      }  
+delay(500);
+}
